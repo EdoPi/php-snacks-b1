@@ -82,7 +82,9 @@ $dot = '.';
 
 
 echo '<h1>Snack 2</h1><h2>Ti Sei Autenticato?</h2></br>';
-
+// is_int verifica se è un intero oppure no.... ma con il $_GET passa una stringa quindi risulterà sempre false
+// se uso intval per trasformare la stringa in int anche le stringhe testuali restituiranno un int?????
+//perciò per fare la verifica richiesta ho usato is_numeric, che verifica che sia l'int che la stringa abbiano caratteri numerici.
 if (strlen($name)>3 && strpos($mail, $at) !== false && strpos($mail, $dot) !== false &&  is_numeric($age) ) {
     echo '<b>Accesso Riuscito</b>';
 
